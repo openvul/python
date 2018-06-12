@@ -26,8 +26,8 @@ def function(newsock, address):
             fp = open(path + "/" + filename,'wb')
             print "["+ gettime() +"] 文件接收开始-> " + filename + " [Size：" + str(filesize/1024) + " kb]"
             while True:  
-                if restsize > 1024:#如果剩余数据包大于1024，就去1024的数据包  
-                    filedata = newsock.recv(1024)  
+                if restsize > 8192:
+                    filedata = newsock.recv(8192)  
                 else:  
                     filedata = newsock.recv(restsize)  
                     fp.write(filedata)  
