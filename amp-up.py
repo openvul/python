@@ -8,7 +8,7 @@ import struct
 
 HOST = '149.28.19.39'
 PORT = 1337
-BUFFER_SIZE = 1024
+BUFFER_SIZE = 8192
 
 def send_file(file_path):
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
